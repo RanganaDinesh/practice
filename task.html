@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="realtime()">
+    <button id="myButton">Add Heading</button>
+<script>
+  document.getElementById("myButton").addEventListener("click", function(){
+    var newHeading = document.createElement("h1");
+    // var text = document.createTextNode("MERN stack");
+    newHeading.innerText="Mern stack";
+    // newHeading.appendChild(text);
+    document.body.insertBefore(newHeading, document.getElementById("myButton"));
+  });
+
+</script>
+<div id="updatetime"></div>
+<script>
+    function realtime(){
+        var real= new Date();
+        var hrs = real.getHours();
+        var mtsa = real.getMinutes();
+        var  secs= real.getSeconds();
+        document.getElementById("updatetime").innerHTML=hrs+":"+mtsa+" : "+ secs;
+        setInterval(realtime ,1000)
+
+    }
+</script>
+<script>
+    // Get the first H1 element from a webpage using JavaScript and DOM
+// Get the first H1 element from a webpage and change its text to "Hello World" using JavaScript and DOM
+var h1 = document.createElement("h1");
+h1.innerHTML = "Hello World";
+document.body.appendChild(h1)
+
+
+</script>
+<!-- //// -->
+
+<h1 id="text" >Hide text</h1>
+<button id="btn">hide text</button>
+<script>
+    const button=document.getElementById("btn").addEventListener("click",function(){
+                text.style.display="none"
+    })
+</script>
+
+<h1 id="txt">HI Everyone </h1>
+<button id="replace">change text</button>
+<script>
+    var button1=document.getElementById("replace").addEventListener("click",function(){
+        txt.innerText="Welcome to Elevation academy";
+    })
+</script>
+
+
+
+
+
+</body>
+</html>

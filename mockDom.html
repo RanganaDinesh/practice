@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="updateTime()">
+    <!-- <h2>1.Create a button , on click of which new Heading tag h1 should be added with text as "MERN stack" on the screen above button</h2>
+    <button id="myButton">Add Heading</button>
+<script>
+  document.getElementById("myButton").addEventListener("click", function(){
+    var newHeading = document.createElement("h1");
+    var text = document.createTextNode("MERN stack");
+    newHeading.appendChild(text);
+    document.body.insertBefore(newHeading, document.getElementById("myButton"));
+  });
+</script> -->
+<!-- <h1></h1>
+
+
+
+<script>
+    var firstH1 = document.querySelector("h1");
+    var firstH1Text = firstH1.textContent;
+
+</script>
+<div id="clock"></div>
+
+<script>
+  function updateTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    const clock = document.getElementById("clock");
+    clock.innerHTML = `${hours}:${minutes}:${seconds}`;
+  }
+
+  setInterval(updateTime, 1000);
+</script>
+<h2>4.Create an HTML page having content as "Hello world" and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</h2>
+<p id="text">Hello world</p>
+<button id="replaceButton">Replace Text</button>
+
+<script>
+  const replaceButton = document.getElementById("replaceButton");
+  const text = document.getElementById("text");
+
+  replaceButton.addEventListener("click", function() {
+    text.innerHTML = "Welcome to Elevation academy";
+  });
+</script> -->
+<!-- <h2>.Create an HTML page having content as Hello world and a button named "Hide Text." When user will click on this button hide the "Hello World" text in javascript</h2>
+<p id="text">Hello world</p>
+<button id="hideButton">Hide Text</button>
+
+<script>
+  const hideButton = document.getElementById("hideButton");
+  const text = document.getElementById("text");
+
+  hideButton.addEventListener("click", function() {
+    text.style.display = "none";
+  });
+</script> -->
+
+<button id="butn">Hi World!</button>
+<script>
+    var onbtn=document.getElementById("butn");
+    onbtn.addEventListener("click" ,function(){
+      var newheading=document.createElement("h1")
+      var text= document.createTextNode("MERN STACK")
+      newheading.appendChild(text)
+      document.body.insertBefore(newheading , document.getElementById("butn"))
+    })
+</script>
+<h1 id="firstHeading"></h1>
+
+<script>
+  const firstHeading = document.querySelector("h1");
+ firstHeading.innerHTML="Hello World"
+</script>
+<div id="updateTime" >real updateTime</div>
+<script>
+    function updateTime(){
+        var real = new Date();
+        var hrs = real.getHours();
+        var mint = real.getMinutes();
+        var sec = real.getSeconds();
+        document.getElementById("updateTime").innerHTML=hrs + ":"+mint+":"+sec;
+        setInterval(updateTime,1000);
+
+    }
+</script>
+<!-- 
+<p id="replace">replace by text by using with button</p>
+<button id="replaceButton">click here</button>
+<script>
+    var text=document.getElementById("replace");
+    var button=document.getElementById("replaceButton");
+    button.addEventListener("click",function(){
+        text.innerHTML="Hello Dinesh"; 
+    })
+</script> -->
+<p id="replace">replace by text by using with button</p>
+<button id="replaceButton">click here</button>
+<script>
+    var text=document.getElementById("replace");
+    var button=document.getElementById("replaceButton");
+    button.addEventListener("click",function(){
+        text.style.display="none"
+    })
+</script>
+
+
+</body>
+</html>

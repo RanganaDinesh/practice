@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+</body>
+</html><div id="cardsContainer">
+</div>
+
+<button onclick="createCard()">Create Card</button>
+
+<script>
+  let cardCounter = 0;
+  const functions = {};
+
+  function createCard() {
+    const cardsContainer = document.getElementById("cardsContainer");
+    const card = document.createElement("div");
+    const cardId = `card-${cardCounter}`;
+    card.setAttribute("id", cardId);
+    card.innerHTML = `
+      <h3>Card ${cardCounter + 1}</h3>
+      <ul id="cardList-${cardCounter}"></ul>
+      <input type="text" id="cardInput-${cardCounter}">
+      <button onclick="addListItem('${cardId}')">Add List Item</button>
+    `;
+    cardsContainer.appendChild(card);
+
+    functions[cardId] = {
+      addListItem: function() {
+        const cardInput = document.getElementById(`cardInput-${cardCounter}`);
+        const cardList = document.getElementById(`cardList-${cardCounter}`);
+        const listItem = document.createElement("li");
+        listItem.innerHTML = cardInput.value;
+        cardList.appendChild(listItem);
+        cardInput.value = "";
+      }
+    };
+
+    cardCounter++;
+  }
+
+  function addListItem(cardId) {
+    functions[cardId].addListItem();
+  }
+</script>

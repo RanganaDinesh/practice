@@ -1,0 +1,288 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #drapdown{
+            padding: 20px;
+            background-color: aliceblue;
+            color: blueviolet;
+        }
+        #showrtime{
+         color: blueviolet;
+         font-size: medium;
+        }
+        #wishes{
+            font-size: 20px ;
+            color: red;
+        }
+
+    </style>
+</head>
+<body onload="realtime()">
+    <header>
+        <h2 id="wishes"></h2>
+        <h3  id="showtime"></h3>
+        <label for="drapdown">drapdown</label>
+        <select name="drapdown" id="drapdown">
+            <option value="select">select</option>
+            <option value="14">02PM - 03PM</option>
+            <option value="15">03PM - 04PM</option>
+            <option value="16">04PM - 05PM</option>
+            
+        </select>
+
+        <h2 id="wishes"></h2>
+    </header>
+    <script>
+        function    realtime(){
+            const today = new Date();
+            let hurs=today.getHours()
+            let mints=today.getMinutes()
+            let secs=today.getSeconds()
+            document.getElementById("showtime").innerHTML=  hurs +"   "+ mints+ " "+  secs;
+            let hour = date.getHours();
+             let drapdown=document.getElementById("drapdown");
+           
+             if(parseInt(drapdown.value)  === hour){
+                document.getElementById("wishes").innerText= "good eveing have your tea.....!"
+                }
+        }
+
+
+    </script>
+
+
+    
+</body>
+</html> -->
+// //>>>>>.
+// let animal = {
+//     eats: true
+//   };
+  
+//   let rabbit = {
+//     jumps: true
+//   };
+  
+  
+// rabbit._proto_ = animal;
+
+  
+// console.log(rabbit.eats);
+
+// Array.prototype.sum = function() {
+//     let result = 0;
+//     for (let i = 0; i < this.length; i++) {
+//       result += this[i];
+//     }
+//     return result;
+//   };
+  
+//   let array1 = [1, 2, 3];
+//   let array2 = [4, 5, 6];
+//   let array3 = [7, 8, 9];
+  
+//   console.log(array1.sum()); // Output: 6
+//   console.log(array2.sum()); // Output: 15
+//   console.log(array3.sum()); // Output: 24
+// }
+// function details(year,marks,location) {
+//     this.year=year;
+//     this.marks=marks;
+//     this.location=location
+// }
+// details.prototype.curyear="2023";//2023
+// const data=new details(2022,67,"AP");//details { year: 2022, marks: 67, location: 'AP' }
+// console.log(data)
+
+//mmc,mcmc,l,>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></this.length>
+
+function oppopup2() {
+    document.getElementById("blur").style.visibility = "none";
+    document.getElementById("popup").style.visibility = "visible";
+    document.getElementById("Inside_content").style.visibility = "visible";
+    document.getElementById("Inside_content").style.filter = "blur(5px)";
+  }
+  // function closepopup2() {
+  //   document.getElementById("Inside_content").style.visibility = "visible";
+  //   document.getElementById("popup").style.visibility = "hidden";
+  // }
+  function back() {
+    document.getElementById("blur").style.visibility = "visible";
+    document.getElementById("Inside_content").style.visibility = "hidden";
+    // newDiv.append(windowcard);
+  }
+  function oppopup() {
+    document.getElementById("popup").style.visibility = "visible";
+    document.getElementById("blur").style.visibility = "visible";
+    document.getElementById("blur").style.filter = "blur(5px)";
+    document.getElementById("no_items").style.visibility = "hidden";
+  }
+  
+  function closepopup() {
+    document.getElementById("popup").style.visibility = "hidden";
+    document.getElementById("Inside_content").style.visibility = "visible";
+  }
+  function dynamicId() {
+    const did = `id-${+new Date()}`;
+    return did;
+  }
+  
+  function createDivElement(id) {
+    var newDiv = document.createElement("div");
+    newDiv.classList.add("box");
+    newDiv.id = id;
+    newDiv.style.marginTop = "20px";
+    newDiv.style.height = "300px";
+    newDiv.style.width = "200px";
+    newDiv.style.backgroundColor = "white";
+    newDiv.style.border = "1px solid black";
+    newDiv.style.borderRadius = "15px";
+    newDiv.style.margin = "100px";
+    newDiv.style.textAlign = "center";
+    newDiv.style.color = "orangered";
+    newDiv.style.fontSize = "25px";
+    return newDiv;
+  }
+  
+  function newElement() {
+    document.getElementById("popup").style.visibility = "hidden";
+    document.getElementById("blur").style.filter = "none";
+    document.getElementById("Inside_content").style.filter = "none";
+    let id = dynamicId();
+  
+    let newDiv = createDivElement(id);
+  
+    /**----------------DELETE ICON-------------------- */
+    var span2 = document.createElement("span");
+    span2.classList.add("delete1", "me", id);
+    var delete1 = document.createElement("i");
+    delete1.classList.add("fa-solid", "fa-trash-can", "delete", id);
+    span2.appendChild(delete1);
+    newDiv.append(span2);
+  
+    const deleteButton = newDiv.querySelector(".me");
+    deleteButton.addEventListener("click", function () {
+      newDiv.remove();
+    });
+  
+    /**-----------------ADD ICON-------------------- */
+    var span1 = document.createElement("span");
+    span1.classList.add("Myplus1", "me", id);
+    var Myplus1 = document.createElement("i");
+    Myplus1.classList.add("fas", "fa-plus-circle", id);
+    span1.append(Myplus1);
+    newDiv.append(span1);
+  
+    span1.onclick = function () {
+      document.getElementById("popup1").dataset.parent = id;
+      document.getElementById("popup1").style.visibility = "visible";
+      document.getElementById("blur").style.visibility = "visible";
+      document.getElementById("blur").style.filter = "blur(5px)";
+    };
+    /**---------------newDiv text-------------------- */
+    var pTag = document.createElement("p");
+    pTag.classList.add("title", id);
+    pTag.textContent = inputtext.value;
+    /*
+    pTag.addEventListener("click", function (obj_new_page) {
+      new_page_fun(obj_new_page);
+    });
+    */
+    newDiv.append(pTag);
+    pTag.onclick = function () {
+      let id = dynamicId();
+      // Create a separate div for it
+      let newDiv = createDivElement(id);
+      document.getElementById("blur").style.visibility = "hidden";
+      document.getElementById("Inside_content").style.visibility = "visible";
+      var pTag = document.createElement("p");
+      pTag.classList.add("title", id);
+      pTag.textContent = inputtext.value;
+      /*
+      pTag.addEventListener("click", function (obj_new_page) {
+        new_page_fun(obj_new_page);
+      });
+      */
+      newDiv.append(pTag);
+      windowcard.innerHTML = "";
+      windowcard.append(newDiv);
+  
+      // windowdata.append(pTag);
+    };
+  
+    // pTag.addEventListener("click", function () {
+    //   document.getElementById("blur").style.display = "none";
+    //   document.getElementById("Inside_content").style.visibility = "visible";
+  
+    //   var pTag = document.createElement("p");
+    //   pTag.classList.add("title", id);
+    //   pTag.textContent = inputtext.value;
+    //   pTag.addEventListener("click", function (obj_new_page) {
+    //     new_page_fun(obj_new_page);
+    //   });
+    //   newDiv.appendChild(pTag);
+    //   windowcard.appendChild(newDiv);
+  
+    //   windowdata.appendChild(pTag);
+    //   // newDiv.appendChild(plan);
+    // });
+    // newDiv.appendChild(plan);
+  
+    /**---------------hr-------------------- */
+    var hr = document.createElement("hr");
+    hr.classList.add("hr");
+    newDiv.appendChild(hr);
+  
+    var myUL = document.getElementById("myUL");
+    newDiv.appendChild(myUL);
+  
+    document.getElementById("blur").appendChild(newDiv);
+  }
+  
+  /----------------------------------------------------------------close button 2-----------------------------/
+  function closepopup2() {
+    document.getElementById("popup1").style.visibility = "hidden";
+    document.getElementById("blur").style.filter = "none";
+  }
+  
+  /----------------------------------------------------------------ul list-----------------------------/
+  function newElement2(ele) {
+    let theDivID = ele.parentElement.parentElement.dataset.parent;
+    //console.log();
+    var li = document.createElement("li");
+    let id = dynamicId();
+    li.id = id;
+    // li.classList.add("list", id);
+    var inputValue = document.getElementById("inputtext2").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === "") {
+      alert("You must write something!");
+    } else {
+      document.getElementById("myUL").appendChild(li);
+    }
+    document.getElementById("inputtext2").value = "";
+  
+    var span = document.createElement("span");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+    document.getElementById(theDivID).appendChild(li);
+    ///
+    //myUL.appendChild(li);
+  
+    // var newDiv = document.getElementsByClassName("box");
+    // for (i = 0; i < close.length; i++) {
+    //   close[i].onclick = function () {
+    //     var newDiv = this.parentElement;
+    //     newDiv.style.display = "none";
+    //   };
+    // }
+  }
